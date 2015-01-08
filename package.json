@@ -1,0 +1,29 @@
+{
+  "name": "slog",
+  "version": "0.0.0",
+  "description": "Slog",
+  "main": "y",
+  "dependencies": {
+    "connect": "~3.3.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kevin14/slog.git"
+  },
+  "keywords": [
+    "simple",
+    "blog",
+    "kevin14",
+    "nodejs"
+  ],
+  "author": "kevin14",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/kevin14/slog/issues"
+  },
+  "homepage": "https://github.com/kevin14/slog"
+}
