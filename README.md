@@ -1,2 +1,2 @@
-# slog
+# Slog
 SLOG
