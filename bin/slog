@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+'use strict';
+
+var handler = require('../lib/handler');
+var argv = require('minimist')(process.argv.slice(2));
+var tasks = argv._;
+var cwd = process.cwd();
+
+handler(cwd,tasks);
+
