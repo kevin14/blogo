@@ -10,7 +10,8 @@
     "minimist": "~1.1.0",
     "underscore": "~1.7.0",
     "markdown": "~0.5.0",
-    "yamljs": "~0.2.1"
+    "yamljs": "~0.2.1",
+    "connect-route": "~0.1.4"
   },
   "devDependencies": {},
   "scripts": {

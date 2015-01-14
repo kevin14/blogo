@@ -1,6 +1,6 @@
 {
   "name": "slog",
-  "version": "0.0.0",
+  "version": "2.8.3",
   "description": "Slog",
   "main": "y",
   "dependencies": {
