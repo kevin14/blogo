@@ -8,4 +8,7 @@ tags: [Xcode,iOS]
 > 1.Window->Organizer
   2.找到Derived Data -> 点击Delete
   3.Quit Xcode -> 重新打开项目
-  4.re-index搞定～
+  4.re-index搞定~
+
+
+  
