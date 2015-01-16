@@ -1,7 +1,5 @@
 # SLOG (轻量级博客生成工具，开发中...)
 
----
-
 ##目录
 
 *	[功能](#功能)
@@ -49,6 +47,7 @@
 在MarkDown中使用此标记用于在当前位置插入创建好的demo示例
 
 ##开发数据
+```
 {
 	"post":{
 		"articles":{
@@ -84,6 +83,7 @@
 		"disqusName":"xx"
 	}
 }
+```
 
 ##Bugs Report
 https://github.com/kevin14/slog/issues
