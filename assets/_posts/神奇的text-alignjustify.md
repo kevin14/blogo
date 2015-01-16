@@ -3,7 +3,6 @@ date: 2014-07-27 21:17:02
 tags: [CSS,text-align,justify,对齐]
 ---
 
-
 对于任何一个前端来说，``text-align``都是再熟悉不过的用法了。我们对于块级元素下的文字对齐通常使用``left``,``right``,``center``等值。不过``text-align``拥有第四个属性值``justify``，这个属性同样也大大方便了我们的``文字``和``列表``布局。今天就来说说``text-align:justify``的用法。
 
 说在前面：其实[W3C](http://dev.w3.org/csswg/css-text/#propdef-text-align)的标准中，``text-align``拥有以下几个值：
