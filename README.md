@@ -26,20 +26,28 @@
 
 ##命令集
 1. slog init (dirname) || slog i
+   
    创建博客
 2. slog new (articleName) || slog n
+   
    创建一篇新文章
    slog new -start || slog new -s
+   
    创建一篇新文章并且开启服务
 3. slog demo (demoName)
+   
    创建一个新示例
 4. slog start || slog s
+   
    创建一个本地web服务用来预览博客
 5. slog deploy || slog d
+   
    自动编译并提交博客
 6. slog generate || slog g
+   
    手动编译md到html
 7. slog remove (articleName) || slog r
+   
    删除一篇文章
 
 ##特殊标记
