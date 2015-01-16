@@ -31,6 +31,7 @@
 2. slog new (articleName) || slog n
    
    创建一篇新文章
+
    slog new -start || slog new -s
    
    创建一篇新文章并且开启服务
@@ -52,6 +53,7 @@
 
 ##特殊标记
 {{demo(demoName)}}
+
 在MarkDown中使用此标记用于在当前位置插入创建好的demo示例
 
 ##开发数据
