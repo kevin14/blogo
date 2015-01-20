@@ -13,7 +13,8 @@
     "yamljs": "~0.2.1",
     "connect-route": "~0.1.4",
     "serve-static": "~1.8.0",
-    "colors": "~1.0.3"
+    "colors": "~1.0.3",
+    "jade": "~1.9.1"
   },
   "devDependencies": {},
   "scripts": {
