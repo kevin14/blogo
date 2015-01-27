@@ -75,14 +75,19 @@
 		},
 		"time":{
 			"year":{
+				"list":["articles" like post.articles],
 				"month":{
-					"day":["articles" like post.articles]
+					"list":["articles" like post.articles],
+					"day":{
+						"list":["articles" like post.articles],
+						"articlesName":post.articles
+					}
 				}
 			}
 		}
 	},
-	"blogName":"blog title",
-	"owner":{
+	"config":{
+		"resourceUrl":"your blog url + /resource"
 		"social":{
 			"twitter":"",
 			"github":"",
@@ -90,6 +95,7 @@
 		},
 		"email":"xx@xx.xx",
 		"author":"xx",
+		"blogName":"blog title",
 		"disqusName":"xx"
 	}
 }

@@ -1,3 +1,15 @@
 port: 4000
 
 theme: default
+
+author: kevin14
+
+social:
+ twitter: https://twitter.com/kevinyangjing
+ github: https://github.com/kevin14
+ weibo: http://weibo.com/kevin14
+
+blogName: 杨靖的博客
+
+blogUrl: kevin14.github.io
+
