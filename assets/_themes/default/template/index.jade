@@ -1,0 +1,17 @@
+extends ./module/layout.jade
+block title
+	title #{config.blogName}
+block content
+	h1 #{config.blogName}
+
+	h3 文章列表
+	ul
+		each blog in post.articles
+			li 
+				a(href='#{blog.link}') #{blog.title}
+
+	h3 tag列表
+	ul
+		each result in post.tags.list
+			li 
+				a(href='#{result.link}') #{result.name}

@@ -60,7 +60,7 @@
 ```
 {
 	"post":{
-		"articles":{
+		"articles":[{
 			"title":"article name",
 			"date":"create time",
 			"year":"create year",
@@ -69,7 +69,7 @@
 			"time":"create time without date info",
 			"desc":"article description",
 			"html":"article detail html"
-		},
+		},...],
 		"tags":{
 			"tagName":["articles" like post.articles]
 		},
@@ -84,6 +84,17 @@
 					}
 				}
 			}
+		}
+		//article数据仅存在于article页面
+		"article":{
+			"title":"article name",
+			"date":"create time",
+			"year":"create year",
+			"month":"create month",
+			"day":"create day",
+			"time":"create time without date info",
+			"desc":"article description",
+			"html":"article detail html"
 		}
 	},
 	"config":{

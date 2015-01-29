@@ -2,5 +2,6 @@ extends ./module/layout.jade
 block title
 	title #{post.article.title}
 block content
-	p content
+	h1 #{post.article.title}
+	h2 #{post.article.date}
 	div.html !{post.article.html}
