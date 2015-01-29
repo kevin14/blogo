@@ -5,17 +5,17 @@
   "main": "lib/index",
   "bin": "./bin/slog",
   "dependencies": {
-    "connect": "~3.3.4",
     "async": "~0.9.0",
-    "minimist": "~1.1.0",
-    "underscore": "~1.7.0",
-    "markdown": "~0.5.0",
-    "yamljs": "~0.2.1",
-    "connect-route": "~0.1.4",
-    "serve-static": "~1.8.0",
     "colors": "~1.0.3",
+    "connect": "~3.3.4",
+    "connect-power-route": "0.0.1",
     "jade": "~1.9.1",
-    "path-to-regexp": "~1.0.3"
+    "markdown": "~0.5.0",
+    "minimist": "~1.1.0",
+    "path-to-regexp": "~1.0.3",
+    "serve-static": "~1.8.0",
+    "underscore": "~1.7.0",
+    "yamljs": "~0.2.1"
   },
   "devDependencies": {},
   "scripts": {
