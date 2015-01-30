@@ -4,4 +4,7 @@ block title
 block content
 	h1 #{post.article.title}
 	h2 #{post.article.date}
+	a(href='#{post.article.nextArticle.link}') 下一篇 #{post.article.nextArticle.title}
+	br
+	a(href='#{post.article.prevArticle.link}') 上一篇 #{post.article.prevArticle.title}
 	div.article-entry !{post.article.html}
