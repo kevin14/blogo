@@ -40,7 +40,7 @@ _但是_,``Templates``就是为了彻底解决这种问题而出现的。
 当然,我们还是可以通过 `` document.querySelector('#myTemplate').content `` 来解决这个问题的。
 
 在Document中,这段代码如下:
-<img width="600px" src="/img/templates_1.png" alt="Templates">
+<img width="600px" src="/static/img/templates_1.png" alt="Templates">
 
 我们用如下js来渲染这个模版:
 ```
@@ -53,7 +53,7 @@ document.body.appendChild(btn);
 OK,这样一个渲染好的按钮就出现在了页面中。
 
 最后说说 ``Template``的兼容性,Can I Use数据截图如下:
-<img width="900px" src="/img/templates_2.png" alt="Templates">
+<img width="900px" src="/static/img/templates_2.png" alt="Templates">
 目前Chrome的支持是最好的,不过不用担心,因为,这就是未来！
 
 

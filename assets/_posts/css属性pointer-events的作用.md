@@ -1,4 +1,4 @@
-title: CSS属性pointer-events的
+title: CSS属性pointer-events的作用
 date: 2015-01-06 14:09:03
 tags: [CSS,pointer-events,穿透]
 ---
@@ -35,15 +35,25 @@ The element is never the target of mouse events; however, mouse events may targe
 意思就是说当元素加上这个属性值之后，这个元素将不会被鼠标事件点击到，但是如果这个元素的后代也有``pointer-events``，并且属性值不是none的话，那么这个后代元素将可以被鼠标事件点击到。_此时，事件在冒泡或者委托过程中，就有可能传递到他们的父元素上了。_
 
 最后一句话听起来有点拗口，我们来做实验测试一下：
-以下几个dom，我都绑定了``click``事件用来触发``alert()方法``：
-<div style="width:300px;height:100px;background-color:rgba(255,60,60,0.7);line-height:100px;text-align:center;color:#fff;font-size:14px;" class="demo1">d1 没有pointer-events属性</div>
-<div style="width:300px;height:100px;background-color:rgba(255,60,60,0.7);line-height:100px;text-align:center;color:#fff;font-size:14px;margin-top:10px;pointer-events:auto;" class="demo2">d2 pointer-events:auto;</div>
-<div style="width:300px;height:100px;background-color:rgba(255,60,60,0.7);line-height:100px;text-align:center;color:#fff;font-size:14px;margin-top:10px;pointer-events:none;" class="demo3">d3 pointer-events:none;</div>
-<div style="width:300px;height:100px;background-color:rgba(255,60,60,0.3);line-height:100px;text-align:left;position:relative;color:#fff;font-size:14px;margin-top:10px;pointer-events:none;" class="demo4">d4 pointer-events:none;
-	<div class="demo5" style="position:absolute;right:0;top:0;color:#fff;background-color:rgba(255,60,60,0.7);pointer-events:auto;">d5 pointer-events:auto;</div>
+以下几个dom，我都绑定了``click``事件用来触发``alert()方法``
+
+<div style="width:300px;height:100px;background-color:rgba(255,60,60,0.7);line-height:100px;text-align:center;color:#fff;font-size:14px;" class="demo1">d1没有pointer-events属性</div>
+
+<div style="width:300px;height:100px;background-color:rgba(255,60,60,0.7);line-height:100px;text-align:center;color:#fff;font-size:14px;margin-top:10px;pointer-events:auto;" class="demo2">d2 pointer-events:auto;
 </div>
+
+<div style="width:300px;height:100px;background-color:rgba(255,60,60,0.7);line-height:100px;text-align:center;color:#fff;font-size:14px;margin-top:10px;pointer-events:none;" class="demo3">d3 pointer-events:none;
+</div>
+
+<div style="width:300px;height:100px;background-color:rgba(255,60,60,0.3);line-height:100px;text-align:left;position:relative;color:#fff;font-size:14px;margin-top:10px;pointer-events:none;" class="demo4">d4 pointer-events:none;
+
+<div class="demo5" style="position:absolute;right:0;top:0;color:#fff;background-color:rgba(255,60,60,0.7);pointer-events:auto;">d5 pointer-events:auto;
+</div>
+</div>
+
 <div style="width:300px;height:100px;background-color:rgba(255,60,60,0.3);line-height:100px;text-align:left;position:relative;color:#fff;font-size:14px;margin-top:10px;pointer-events:auto;" class="demo6">d6 pointer-events:auto;
-	<div class="demo7" style="position:absolute;right:0;top:0;color:#fff;background-color:rgba(255,60,60,0.7);pointer-events:none;">d7 pointer-events:none;</div>
+
+<div class="demo7" style="position:absolute;right:0;top:0;color:#fff;background-color:rgba(255,60,60,0.7);pointer-events:none;">d7 pointer-events:none;</div>
 </div>
 <script>
 	

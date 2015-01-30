@@ -8,8 +8,7 @@ tags: [HTML5,Canvas,Duplicated,Android,Bug]
 Canvas的父级不能拥有 ``overflow`` 的属性(除非是 ``body`` )，否则便会导致Canvas被复制。
 
 在Google Code上也有类似的Issue -- https://code.google.com/p/android/issues/detail?id=41312
-
-### 先上代码:
+### 先上代码: 
 
 ```
 	//this may bring the android browser bug
@@ -35,7 +34,7 @@ Canvas的父级不能拥有 ``overflow`` 的属性(除非是 ``body`` )，否则
 
 ### Bug如下图:
 
-<img width="320px" height="640px" src="/img/error.jpg" alt="位置异常">
+<img width="320px" height="640px" src="/static/img/error.jpg" alt="位置异常">
 
 手机型号: 小米2S 三星S3
 
@@ -43,4 +42,4 @@ Canvas的父级不能拥有 ``overflow`` 的属性(除非是 ``body`` )，否则
 
 ### 修复后:
 
-<img width="320px" height="640px" src="/img/correct.jpg" alt="位置异常">
+<img width="320px" height="640px" src="/static/img/correct.jpg" alt="位置异常">

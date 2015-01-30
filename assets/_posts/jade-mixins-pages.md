@@ -10,7 +10,7 @@ tags: Jade Mixins 分页控件
 
 ### Jade:
 
-``` bash
+```
 mixin pages(curPage,totol,baseUrl)
 	- var curPage = Number(curPage),totol = Number(totol);
 	- var startPage = curPage - 4 > 0 ? curPage - 4 : 1;
@@ -30,11 +30,11 @@ mixin pages(curPage,totol,baseUrl)
 ```
 
 ### 使用:
-``` bash
+```
 +pages(pageId,20,'http://loler.us:4000/qa')
 ```
 ### 结果:
-```bash
+```
 <div class="global-pages">
 	<a href="http://loler.us:4000/qa?id=1" class="page page-1 cur">1</a>
 	<a href="http://loler.us:4000/qa?id=2" class="page page-2">2</a>

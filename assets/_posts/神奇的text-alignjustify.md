@@ -3,7 +3,7 @@ date: 2014-07-27 21:17:02
 tags: [CSS,text-align,justify,对齐]
 ---
 
-对于任何一个前端来说，``text-align``都是再熟悉不过的用法了。我们对于块级元素下的文字对齐通常使用``left``,``right``,``center``等值。不过``text-align``拥有第四个属性值``justify``，这个属性同样也大大方便了我们的``文字``和``列表``布局。今天就来说说``text-align:justify``的用法。
+对于任何一个前端来说，```text-align```都是再熟悉不过的用法了。我们对于块级元素下的文字对齐通常使用``left``,``right``,``center``等值。不过``text-align``拥有第四个属性值``justify``，这个属性同样也大大方便了我们的``文字``和``列表``布局。今天就来说说``text-align:justify``的用法。
 
 说在前面：其实[W3C](http://dev.w3.org/csswg/css-text/#propdef-text-align)的标准中，``text-align``拥有以下几个值：
 > 1.left
@@ -34,7 +34,7 @@ This CSS3 module defines properties text manipulation and specifies their proces
 ```
 效果如下：
 
-<img width="400px" src="/img/text_align_left.png" alt="text_align_left">
+<img width="400px" src="/static/img/text_align_left.png" alt="text_align_left">
 
 可以看到如果不使用``word-wrap:break-all``的话，那么右侧并不是那么整齐，会有一个个缺口。
 
@@ -50,7 +50,7 @@ This CSS3 module defines properties text manipulation and specifies their proces
 ```
 效果显而易见：
 
-<img width="400px" src="/img/text_align_justify.png" alt="text_align_left">
+<img width="400px" src="/static/img/text_align_justify.png" alt="text_align_left">
 
 注：很多时候，大家会用``word-wrap:break-all``来达到同样的对齐效果，殊不知这个属性会很变态的阶段正常的单词！慎用！因此理解每个属性的意义是相当重要滴。
 
@@ -59,6 +59,7 @@ This CSS3 module defines properties text manipulation and specifies their proces
 现在开始介绍``justify``在列表布局中的用法。我们在进行网格式的列表布局的时候，常常会因为最右侧的``li``没有紧紧贴合右侧的边框而烦恼，有的时候我们会使用外层的``box`` ``overflow:hidden``的方法来解决这种问题，有的时候我们会强行的按照内部元素占据的空间规定外层``box``的``width``,反正有很多方法可以达到贴合的效果，但是都费时费力很伤神。然后，我们使用``text-justify``便可以瞬间秒杀这种问题。
 
 话不多少，上代码：
+
 ```
 <style>
   ul{
@@ -66,7 +67,6 @@ This CSS3 module defines properties text manipulation and specifies their proces
     border: 1px solid #d8d8d8;
     text-align: justify;
     padding: 0;
-
     li{
      display: inline-block;
 
@@ -106,7 +106,7 @@ This CSS3 module defines properties text manipulation and specifies their proces
 ```
 
 效果图：
-<img width="400px" src="/img/text_align_justify_list.png" alt="text_align_justify_list">
+<img width="400px" src="/static/img/text_align_justify_list.png" alt="text_align_justify_list">
 搞定，就那么简单～
 注意：代码中最后四个空的``li``，目的就是为了让最后一行永远处于被撑开的状态，以达到和上面的列表对齐的效果。大家理解一下吧～
 
