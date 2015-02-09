@@ -5,7 +5,9 @@ tags: [CSS,pointer-events,穿透]
 
 前几天看到一个网站上铺满了飘动着的雪花，不用想肯定是用``canvas``来做的了。但是让我好奇的是，铺满了雪花的页面是可以点击的。在了解``pointer-events``之前，我猜想也许是对鼠标事件做了处理，但是这样做代价很大，而且是首页，大公司不太可能这样做。于是审查代码发现了这个``pointer-events``属性，才知道原来浏览器上还有如此赞的属性！今天我就来研究一下这个神器的属性！
 
-__sample demo
+{-sample demo-}
+{-sample demo-}
+{-sample demo-}
 
 ---
 
