@@ -32,10 +32,10 @@
    
    创建一篇新文章
 
-   slog new -start || slog new -s
+   slog new -s
    
    创建一篇新文章并且开启服务
-3. slog demo (demoName)
+3. slog sample (sampleName)
    
    创建一个新示例
 4. slog start || slog s
@@ -52,7 +52,7 @@
    删除一篇文章
 
 ##特殊标记
-{{demo(demoName)}}
+{-demo(demoName)-}
 
 在MarkDown中使用此标记用于在当前位置插入创建好的demo示例
 
