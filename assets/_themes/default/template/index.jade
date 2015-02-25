@@ -4,14 +4,15 @@ block title
 block content
 	h1 #{config.blogName}
 
-	h3 文章列表
-	ul
+	h3 Articles
+	ul.article_list
 		each blog in post.articles
 			li 
 				a(href='#{blog.link}') #{blog.title}
+				span.time #{blog.year}-#{blog.month}-#{blog.day}
 
-	h3 tag列表
-	ul
+	h3 Tags
+	ul.tag_list
 		each result in post.tags.list
 			li 
 				a(href='#{result.link}') #{result.name}

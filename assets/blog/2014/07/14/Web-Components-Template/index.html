@@ -1,0 +1,39 @@
+<!DOCTYPE html><html><head><title>Web-Components-Template</title><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="/resource/css/base.css"><script type="text/javascript" src="/resource/js/jquery-2.1.3.min.js"></script></head><body></body><h1>Web-Components-Template</h1><h2>2014-07-14 21:18:10</h2><a href="/2014/07/15/Web-Components-Decorators">下一篇 Web-Components-Decorators</a><br><a href="/2014/06/27/Html5-Canvas-Duplicated-On-Android">上一篇 Html5-Canvas-Duplicated-On-Android</a><div class="article-entry"><p>当 <code>Web Components API</code> 出现的时候,我就感觉这东西也许就是前端的未来了。<code>Web Components</code> 补充了很多当前HTML标准的缺陷。</p>
+<p><code>Web Components API</code> 由以下5个部分组成:</p>
+<blockquote>
+<p>Templates
+Decorators 
+Custom Elements
+Shadow DOM
+Imports</p>
+</blockquote>
+<p>下面我先来介绍一下第一部分,也就是 <code>Web Components</code> 的 <code>Templates</code>。</p>
+<p><a href="http://www.w3.org/TR/2013/WD-html-templates-20130214/">W3C</a> 官方的解释如下:</p>
+<blockquote>
+<p>a method for declaring inert DOM subtrees in HTML and manipulating them to instantiate document fragments with identical contents.</p>
+</blockquote>
+<p>其实,简而言之,就是一种用来渲染的模版。哈哈 ^ ^</p>
+<p>其实模版渲染无非就是 <strong>模版+数据=HTML</strong> 这种模式,只不过模版的类型不同而已。现在比较流行的做法是对字符串进行操作,字符串中规定特殊的标记用来渲染数据,比如EJS的 <code>&lt;%%&gt;</code> ,Jade的 <code>#{}</code> 等等。然而这种操作毕竟是耗时耗力的。而另外一种则是先把节点DOM写进Document ( 这种方法早已被忘记～哈哈 )。</p>
+<p><em>但是</em>,<code>Templates</code>就是为了彻底解决这种问题而出现的。</p>
+<h3 id="-templates-">下面我就写一个例子，让大家更好的理解 <code>Templates</code> ,先上代码:</h3>
+<p>我们用 <code>Template</code> 标签来定义一个模版:</p>
+<pre><code>&lt;template id=&quot;myTemplate&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;common_btn&quot;&gt;&lt;/a&gt;
+    &lt;canvas&gt;&lt;/canvas&gt;
+&lt;/template&gt;
+</code></pre><p>注意: <code>Template</code> 在浏览器中的表现形式是 <code>display:none</code> 的，其实它就是一个隐藏的普通特殊而已。</p>
+<p>如果我想通过 <code>document.querySelector(&#39;#myTemplate&#39;).childNodes</code> 来获取上面代码的子结点,那是做不到的。因为 <code>Template</code> 标签里的东西在浏览器中的表现形式是空的,即 <code>不存在</code>。</p>
+<p>当然,我们还是可以通过 <code>document.querySelector(&#39;#myTemplate&#39;).content</code> 来解决这个问题的。</p>
+<p>在Document中,这段代码如下:
+<img width="600px" src="/static/img/templates_1.png" alt="Templates"></p>
+<p>我们用如下js来渲染这个模版:</p>
+<pre><code>var template = document.querySelector(&#39;#myTemplate&#39;);
+var btn = template.content.cloneNode(true);
+btn.querySelector(&quot;.common_btn&quot;).innerHTML = &quot;按钮&quot;;
+document.body.appendChild(btn);
+</code></pre><p>OK,这样一个渲染好的按钮就出现在了页面中。</p>
+<p>最后说说 <code>Template</code>的兼容性,Can I Use数据截图如下:
+<img width="900px" src="/static/img/templates_2.png" alt="Templates">
+目前Chrome的支持是最好的,不过不用担心,因为,这就是未来！</p>
+<p>补充: <code>Template</code> 标签中的任何元素都是不会被渲染的,所以不用担心在 <code>Template</code> 中引入了 <code>image</code> 标签等需要加载资源的元素,只有通过 <code>javaScript</code> , <code>Custom Elements</code>等方法渲染之后这些 <code>Template</code>才会其作用哦～所以,放心大胆的使用吧！</p>
+</div></html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head><title>Jade-Mixins-Pages</title><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="/resource/css/base.css"><script type="text/javascript" src="/resource/js/jquery-2.1.3.min.js"></script></head><body></body><h1>Jade-Mixins-Pages</h1><h2>2014-06-09 17:18:10</h2><a href="/2014/06/27/Html5-Canvas-Duplicated-On-Android">下一篇 Html5-Canvas-Duplicated-On-Android</a><br><a href="/2014/06/09/Jade-Mixins-Pages">上一篇 Jade-Mixins-Pages</a><div class="article-entry"><p>分页功能对于web开发来说是非常常见的功能之一，而其实现上也有多种方法。
+这里和大家分享一种使用Jade实现的分页~</p>
+<hr>
+<p>先上代码:</p>
+<h3 id="jade-">Jade:</h3>
+<pre><code>mixin pages(curPage,totol,baseUrl)
+    - var curPage = Number(curPage),totol = Number(totol);
+    - var startPage = curPage - 4 &gt; 0 ? curPage - 4 : 1;
+    - var lastPage = curPage + 4 &lt;= totol ? curPage + 4 : totol;
+    - if(startPage == 1) lastPage = totol &gt;= 9 ? 9 : totol
+    div.global-pages
+        - if(curPage &gt; 1)
+            a.page.page-prev(href=baseUrl+&#39;?id=&#39;+(curPage-1)) 上一页
+        - if(startPage &gt; 1)
+            a.ell ...
+        - for(var val = startPage ; val &lt; lastPage + 1 ; val ++)
+            a.page(class=&#39;page-&#39;+val class=curPage===val?&#39;cur&#39;:&#39;&#39; href=baseUrl+&#39;?id=&#39;+val) #{val}
+        - if(totol &gt; 9 &amp;&amp; curPage &lt; totol )
+            a.ell ...
+        - if(curPage &lt; totol)
+            a.page.page-next(href=baseUrl+&#39;?id=&#39;+(curPage+1)) 下一页
+</code></pre><h3 id="-">使用:</h3>
+<pre><code>+pages(pageId,20,&#39;http://loler.us:4000/qa&#39;)
+</code></pre><h3 id="-">结果:</h3>
+<pre><code>&lt;div class=&quot;global-pages&quot;&gt;
+    &lt;a href=&quot;http://loler.us:4000/qa?id=1&quot; class=&quot;page page-1 cur&quot;&gt;1&lt;/a&gt;
+    &lt;a href=&quot;http://loler.us:4000/qa?id=2&quot; class=&quot;page page-2&quot;&gt;2&lt;/a&gt;
+    &lt;a href=&quot;http://loler.us:4000/qa?id=3&quot; class=&quot;page page-3&quot;&gt;3&lt;/a&gt;
+    &lt;a href=&quot;http://loler.us:4000/qa?id=4&quot; class=&quot;page page-4&quot;&gt;4&lt;/a&gt;
+    &lt;a href=&quot;http://loler.us:4000/qa?id=5&quot; class=&quot;page page-5&quot;&gt;5&lt;/a&gt;
+    &lt;a href=&quot;http://loler.us:4000/qa?id=6&quot; class=&quot;page page-6&quot;&gt;6&lt;/a&gt;
+    &lt;a href=&quot;http://loler.us:4000/qa?id=7&quot; class=&quot;page page-7&quot;&gt;7&lt;/a&gt;
+    &lt;a href=&quot;http://loler.us:4000/qa?id=8&quot; class=&quot;page page-8&quot;&gt;8&lt;/a&gt;
+    &lt;a href=&quot;http://loler.us:4000/qa?id=9&quot; class=&quot;page page-9&quot;&gt;9&lt;/a&gt;
+    &lt;a class=&quot;ell&quot;&gt;...&lt;/a&gt;
+    &lt;a href=&quot;http://loler.us:4000/qa?id=2&quot; class=&quot;page page-next&quot;&gt;下一页&lt;/a&gt;
+&lt;/div&gt;
+</code></pre><h3 id="-">参数:</h3>
+<p>curPage  当前的pageId
+totol    页面总数
+baseUrl  a标签的链接 例如 <a href="http://loler.us:4000/qa，那么a的url就是http://loler.us:4000/qa?id=">http://loler.us:4000/qa，那么a的url就是http://loler.us:4000/qa?id=</a></p>
+<h3 id="-">效果:</h3>
+<p><img src="/img/mixin-pages.png" alt="分页"></p>
+</div></html>

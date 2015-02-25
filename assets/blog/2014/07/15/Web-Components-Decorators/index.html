@@ -1,0 +1,93 @@
+<!DOCTYPE html><html><head><title>Web-Components-Decorators</title><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="/resource/css/base.css"><script type="text/javascript" src="/resource/js/jquery-2.1.3.min.js"></script></head><body></body><h1>Web-Components-Decorators</h1><h2>2014-07-15 20:49:24</h2><a href="/2014/07/27/神奇的text-align:justify">下一篇 神奇的text-align:justify</a><br><a href="/2014/07/14/Web-Components-Template">上一篇 Web-Components-Template</a><div class="article-entry"><p><code>Decorators</code>，翻译过来就是<code>装潢工</code>。其实它在HTML中的角色也是如此，作为对HTML的装潢者，<code>Decorators</code>的出现给我们带来了很多方便之处。</p>
+<p><a href="http://www.w3.org/TR/components-intro/#decorator-section">W3C</a> 官方的解释如下:</p>
+<blockquote>
+<p>A decorator is something that enhances or overrides the presentation of an existing element. Like all presentation aspects, the application of decorators is controlled by CSS. However, being able to specify the extra presentation using markup is unique to decorators.</p>
+</blockquote>
+<p>说白了,就是 <code>Decorators</code>能做到的不仅仅是改变元素外观那么简单,<code>Decorators</code>还能使用标记改变DOM的结构,甚至是完全改变。
+不过,虽然这看上去很美好。目前能支持 <code>Decorators</code>的浏览器仍然为 <code>0</code>。至于未来会怎么样，也是未知数，个人感觉这块将是 <code>Web Components</code> 中兼容性最不好的组成部分。不过既然存在，我还是按照 <a href="http://www.w3.org/TR/components-intro/#decorator-section">W3C</a> 的解释以及自己的理解演示一下吧。^ ^</p>
+<p>首先，假设我们有一个 <code>Decorator</code>，这个 <code>Decorator</code> 的作用是在列表中的每一行添加一个分享模块：</p>
+<pre><code>&lt;decorator id=&quot;share-decorator&quot;&gt;
+   &lt;template&gt;
+         &lt;div class=&quot;share-box&quot;&gt;
+            &lt;a class=&quot;share-to-weixin&quot; href=&quot;#&quot;&gt;微信&lt;/a&gt;
+            &lt;a class=&quot;share-to-weibo&quot; href=&quot;#&quot;&gt;微博&lt;/a&gt;
+            &lt;a class=&quot;share-to-douban&quot; href=&quot;#&quot;&gt;豆瓣&lt;/a&gt;
+         &lt;/div&gt;
+         &lt;content&gt;&lt;/content&gt;
+   &lt;/template&gt;
+&lt;/decorator&gt;
+</code></pre><p>此时，我们有一个消息列表：</p>
+<pre><code>&lt;ul id=&quot;message-list&quot;&gt;
+    &lt;li&gt;
+        &lt;article class=&quot;message-box&quot;&gt;
+            &lt;p class=&quot;message&quot;&gt;messages&lt;/p&gt;
+        &lt;/article&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p>另外，我们还有另外一个列表需要分享模块：</p>
+<pre><code>&lt;ul id=&quot;some-list&quot;&gt;
+    &lt;li&gt;
+        &lt;article class=&quot;some-box&quot;&gt;
+            &lt;p class=&quot;some-message&quot;&gt;some-messages&lt;/p&gt;
+        &lt;/article&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p>在 <code>Decorators</code> 出现之前我们会分别把分享的代码写进这两个 <code>list</code> 的合适位置。而如今，我们仅仅需要一个class就可以搞定。如下：</p>
+<pre><code>#message-list .message-box {
+    decorator: url(#share-decorator);
+}
+#some-list .some-box {
+    decorator: url(#share-decorator);
+}
+</code></pre><p>加上以上<code>class</code>属性之后，原来的DOM如下：</p>
+<pre><code>&lt;ul id=&quot;message-list&quot;&gt;
+    &lt;li&gt;
+        &lt;article class=&quot;message-box&quot;&gt;
+            &lt;div class=&quot;share-box&quot;&gt;
+                &lt;a class=&quot;share-to-weixin&quot; href=&quot;#&quot;&gt;微信&lt;/a&gt;
+                &lt;a class=&quot;share-to-weibo&quot; href=&quot;#&quot;&gt;微博&lt;/a&gt;
+                &lt;a class=&quot;share-to-douban&quot; href=&quot;#&quot;&gt;豆瓣&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;p class=&quot;message&quot;&gt;messages&lt;/p&gt;
+        &lt;/article&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul id=&quot;some-list&quot;&gt;
+    &lt;li&gt;
+        &lt;article class=&quot;some-box&quot;&gt;
+            &lt;div class=&quot;share-box&quot;&gt;
+                &lt;a class=&quot;share-to-weixin&quot; href=&quot;#&quot;&gt;微信&lt;/a&gt;
+                &lt;a class=&quot;share-to-weibo&quot; href=&quot;#&quot;&gt;微博&lt;/a&gt;
+                &lt;a class=&quot;share-to-douban&quot; href=&quot;#&quot;&gt;豆瓣&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;p class=&quot;some-message&quot;&gt;some-messages&lt;/p&gt;
+        &lt;/article&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p>由于目前还没有浏览器的支持，所以以上代码的准确性有待测试，但是<code>Decorators</code>的功能大体表现如此。
+当然，除了对<code>DOM</code>结构的变动，<code>Decorators</code>也可以在其内部添加<code>style</code>以及<code>scripts</code>：</p>
+<pre><code>&lt;decorator id=&quot;share-decorator&quot;&gt;
+   &lt;script&gt;
+        function clickHandler(event) {
+            ...
+        }
+        [{selector: &#39;.share-to-weixin&#39;, type: &#39;click&#39;, handler: clickHandler}];
+   &lt;/script&gt;
+   &lt;style scoped&gt;
+        //这里scoped是W3C的新特性，目前只有FireFox以及打开权限的Chrome最新版支持哦
+        .share-to-weixin {
+            ...
+        }
+   &lt;/style&gt;
+   &lt;template&gt;
+         &lt;div class=&quot;share-box&quot;&gt;
+            &lt;a class=&quot;share-to-weixin&quot; href=&quot;#&quot;&gt;微信&lt;/a&gt;
+            &lt;a class=&quot;share-to-weibo&quot; href=&quot;#&quot;&gt;微博&lt;/a&gt;
+            &lt;a class=&quot;share-to-douban&quot; href=&quot;#&quot;&gt;豆瓣&lt;/a&gt;
+         &lt;/div&gt;
+         &lt;content&gt;&lt;/content&gt;
+   &lt;/template&gt;
+&lt;/decorator&gt;
+</code></pre><p>这样看来，是不是有点小激动～</p>
+<p>好啦，分享结束。<code>Web Components API</code>剩下的3部分我会抽时间整理好献给大家^ ^</p>
+</div></html>

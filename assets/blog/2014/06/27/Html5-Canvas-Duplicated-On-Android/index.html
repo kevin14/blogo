@@ -1,0 +1,26 @@
+<!DOCTYPE html><html><head><title>Html5-Canvas-Duplicated-On-Android</title><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="/resource/css/base.css"><script type="text/javascript" src="/resource/js/jquery-2.1.3.min.js"></script></head><body></body><h1>Html5-Canvas-Duplicated-On-Android</h1><h2>2014-06-27 15:08:44</h2><a href="/2014/07/14/Web-Components-Template">下一篇 Web-Components-Template</a><br><a href="/2014/06/09/Jade-Mixins-Pages">上一篇 Jade-Mixins-Pages</a><div class="article-entry"><p>最近在开发H5游戏的时候会出现用Canvas绘制的画面被复制到页面顶部的问题，而且仅仅在Android的浏览器上会出现这种情况，反复检查不得其解。最终发现这竟然是CSS引起的Bug。</p>
+<p>Canvas的父级不能拥有 <code>overflow</code> 的属性(除非是 <code>body</code> )，否则便会导致Canvas被复制。</p>
+<p>在Google Code上也有类似的Issue -- <a href="https://code.google.com/p/android/issues/detail?id=41312">https://code.google.com/p/android/issues/detail?id=41312</a></p>
+<h3 id="-">先上代码:</h3>
+<pre><code>    //this may bring the android browser bug
+    .parent{
+        overflow:hidden;
+        .canvas{
+
+        }
+    }
+</code></pre><pre><code>    //correct
+    .parent{
+        //overflow:hidden;
+        .canvas{
+
+        }
+    }
+</code></pre><hr>
+<h3 id="bug-">Bug如下图:</h3>
+<p><img width="320px" height="640px" src="/static/img/error.jpg" alt="位置异常"></p>
+<p>手机型号: 小米2S 三星S3</p>
+<hr>
+<h3 id="-">修复后:</h3>
+<p><img width="320px" height="640px" src="/static/img/correct.jpg" alt="位置异常"></p>
+</div></html>
