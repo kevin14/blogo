@@ -4,6 +4,12 @@ theme: default
 
 author: kevin14
 
+deploy:
+ type: github
+ repo: git@github.com:kevin14/kevin14.github.io.git
+ branch: master
+ message: Slog deploy
+
 social:
  twitter: https://twitter.com/kevinyangjing
  github: https://github.com/kevin14

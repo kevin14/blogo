@@ -43,10 +43,10 @@
    创建一个本地web服务用来预览博客
 5. slog deploy || slog d
    
-   自动编译并提交博客
+   提交博客
 6. slog generate || slog g
    
-   手动编译md到html
+   手动编译md到blog
 7. slog remove (articleName) || slog r
    
    删除一篇文章
