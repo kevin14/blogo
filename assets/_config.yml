@@ -2,20 +2,20 @@ port: 4000
 
 theme: default
 
-author: kevin14
+author: 
 
 deploy:
- type: github
- repo: git@github.com:kevin14/kevin14.github.io.git
- branch: master
+ type: 
+ repo: 
+ branch: 
  message: Slog deploy
 
 social:
- twitter: https://twitter.com/kevinyangjing
- github: https://github.com/kevin14
- weibo: http://weibo.com/kevin14
+ twitter: 
+ github: 
+ weibo: 
 
-blogName: 杨靖的博客
+blogName: 
 
-blogUrl: kevin14.github.io
+blogUrl: 
 
