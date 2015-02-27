@@ -1,9 +1,9 @@
 {
-  "name": "slog",
+  "name": "blogo",
   "version": "0.0.1",
-  "description": "Slog",
+  "description": "Smart Blog Generator",
   "main": "lib/index",
-  "bin": "./bin/slog",
+  "bin": "./bin/blogo",
   "dependencies": {
     "async": "~0.9.0",
     "colors": "~1.0.3",
@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/kevin14/slog.git"
+    "url": "git://github.com/kevin14/blogo.git"
   },
   "keywords": [
     "simple",
@@ -33,7 +33,7 @@
   "author": "kevin14",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/kevin14/slog/issues"
+    "url": "https://github.com/kevin14/blogo/issues"
   },
-  "homepage": "https://github.com/kevin14/slog"
+  "homepage": "https://github.com/kevin14/blogo"
 }

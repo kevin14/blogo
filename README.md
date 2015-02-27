@@ -19,35 +19,35 @@
 4.  拥有专门的文章demo生成工具，方便在文章中插入示例
 
 ##下载及安装
-1.  npm install slog -g
+1.  npm install blogo -g
 
 ##使用
-1.  slog init && slog start
+1.  blogo init && blogo start
 
 ##命令集
-1. slog init (dirname) || slog i
+1. blogo init (dirname) || blogo i
    
    创建博客
-2. slog new (articleName) || slog n
+2. blogo new (articleName) || blogo n
    
    创建一篇新文章
 
-   slog new -s
+   blogo new -s
    
    创建一篇新文章并且开启服务
-3. slog sample (sampleName)
+3. blogo sample (sampleName)
    
    创建一个新示例
-4. slog start || slog s
+4. blogo start || blogo s
    
    创建一个本地web服务用来预览博客
-5. slog deploy || slog d
+5. blogo deploy || blogo d
    
    提交博客
-6. slog generate || slog g
+6. blogo generate || blogo g
    
    手动编译md到blog
-7. slog remove (articleName) || slog r
+7. blogo remove (articleName) || blogo r
    
    删除一篇文章
 
@@ -113,7 +113,7 @@
 ```
 
 ##Bugs Report
-https://github.com/kevin14/slog/issues
+https://github.com/kevin14/blogo/issues
 
 ##TODO
 1. 增加对于其他模版引擎的支持
