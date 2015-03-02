@@ -1,56 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+img {
+  vertical-align: top;
+  border: none;
+}
+input,
+textarea {
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  -webkit-appearance: none;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+input[type="text"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+textarea {
+  -webkit-appearance: none;
+  border: 1px solid;
+  border-radius: 0;
+}
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+a {
+  text-decoration: none;
+  -webkit-touch-callout: none;
+  color: #227ce8;
+  font-size: 12px;
+}
+em,
+i {
+  font-style: normal;
+}
+li {
+  margin-left: 10px;
+}
 body{
-	color: #666;
-	font-family: "PingHei","Lucida Grande", "Lucida Sans Unicode", "STHeiti", "Helvetica","Arial","Verdana","sans-serif";
-	text-align: center;
+	color: #2f2f2f;
+	font-family: Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
 }
 a:hover{
 	text-decoration: underline;
 }
-h1{
-	color: #000;
-}
-h3{
-	
-}
-ul{
-	margin: 0;
-	padding: 0;
-}
 
-ul.article_list{
-	margin: 0 auto;
-	width: 70%;
-	text-align: left;
+/*代码片段样式*/
+pre{
+	display: block;
+	background-color: #f7f7f7;
+	padding: 10px;
+	overflow-x:scroll;
+	border-radius: 3px;
+	line-height: 20px;
 }
-ul.article_list li{
-	line-height: 35px;
-	list-style-type: none;
-	border-bottom: 1px solid #e5e5e5;
+pre code{
+	background-color: #f7f7f7;
 }
-ul.article_list li a{
-	text-decoration: none;
-	font-size: 14px;
-	color: #227ce8;
+code{
+	font-family: Consolas;
+	padding: 3px;
+	background-color: rgba(0,0,0,0.06);
+	border-radius: 3px;
+	margin: 0 2px;
+	font-size: 13px;
 }
-ul.article_list li span.time{
-	color: #666;
-	font-size: 12px;
-	float: right;
+hr{
+	margin: 20px 0;
+	border: none;
+	border-top: 1px solid rgba(0,0,0,0.1);
 }
-
-ul.tag_list{
-	margin: 0 auto;
-	width: 70%;
-	text-align: left;
+p{
+	margin: 10px 0;
 }
-ul.tag_list li{
-	list-style-type: none;
-	display: inline-block;
-	padding: 0 20px;
-	line-height: 25px;
-}
-ul.tag_list li a{
-	text-decoration: none;
-	font-size: 14px;
-	color: #227ce8;
+.h-font{
+	font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }

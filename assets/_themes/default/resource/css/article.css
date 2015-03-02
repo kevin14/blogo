@@ -1,0 +1,25 @@
+.content{
+	width: 900px;
+	margin: 30px auto;
+}
+.title{
+	color: #000;
+	margin: 10px 0;
+}
+.date{
+	margin: 20px 0;
+}
+.article-entry{
+	line-height: 30px;
+}
+.page{
+	color: #999;
+	padding: 20px 0;
+	font-size: 12px;
+}
+.page .next{
+	float: right;
+}
+.page .prev{
+	float: left;
+}

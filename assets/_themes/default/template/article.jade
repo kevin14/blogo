@@ -1,10 +1,16 @@
 extends ./module/layout.jade
 block title
 	title #{post.article.title}
+	meta(charset='utf-8')
+	link(rel='stylesheet',type='text/css',href='/resource/css/base.css')
+	link(rel='stylesheet',type='text/css',href='/resource/css/article.css')
+	script(type='text/javascript',src='/resource/js/jquery-2.1.3.min.js')
 block content
-	h1 #{post.article.title}
-	h2 #{post.article.date}
-	a(href='#{post.article.nextArticle.link}') 下一篇 #{post.article.nextArticle.title}
-	br
-	a(href='#{post.article.prevArticle.link}') 上一篇 #{post.article.prevArticle.title}
-	div.article-entry !{post.article.html}
+	div.content
+		h1.title.h-font #{post.article.title}
+		h3.date.h-font #{post.article.year}-#{post.article.month}-#{post.article.day}
+		div.article-entry !{post.article.html}
+		div.page
+			a.prev(href='#{post.article.prevArticle.link}') 上一篇 #{post.article.prevArticle.title}
+			a.next(href='#{post.article.nextArticle.link}') 下一篇 #{post.article.nextArticle.title}
+		

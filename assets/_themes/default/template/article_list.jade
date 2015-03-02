@@ -1,6 +1,10 @@
 extends ./module/layout.jade
 block title
 	title #{config.blogName} 列表
+	meta(charset='utf-8')
+	link(rel='stylesheet',type='text/css',href='/resource/css/base.css')
+	link(rel='stylesheet',type='text/css',href='/resource/css/home.css')
+	script(type='text/javascript',src='/resource/js/jquery-2.1.3.min.js')
 block content
 	h1 #{config.blogName}
 	ul
