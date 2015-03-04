@@ -1,6 +1,6 @@
 # BLOGO (轻量级博客生成工具)
 
-##目录
+## 目录
 
 *	[功能](#功能)
 *	[下载及安装](#下载及安装)
@@ -12,19 +12,19 @@
 *	[Bugs Report](#Bugs Report)
 *	[授权协议](#授权协议)
 
-##功能
+## 功能
 1.  快速创建博客，并使用MarkDown写文章
 2.  自定义主题(目前仅支持Jade)
 3.  一条命令同步到博客目的地(目前仅支持git)
 4.  拥有专门的文章demo生成工具，方便在文章中插入示例
 
-##下载及安装
+## 下载及安装
 1.  npm install blogo -g
 
-##使用
+## 使用
 1.  blogo init && blogo start
 
-##命令集
+## 命令集
 1. blogo init (dirname) || blogo i
    
    创建博客
@@ -51,12 +51,12 @@
    
    删除一篇文章
 
-##特殊标记
+## 特殊标记
 {-demo(demoName)-}
 
 在MarkDown中使用此标记用于在当前位置插入创建好的demo示例
 
-##开发数据
+## 开发数据
 ```
 {
 	"post":{
@@ -112,12 +112,12 @@
 }
 ```
 
-##Bugs Report
+## Bugs Report
 https://github.com/kevin14/blogo/issues
 
-##TODO
+## TODO
 1. 增加对于其他模版引擎的支持
 2. 增加其他repo的支持
 
-##授权协议
+## 授权协议
 Released under the MIT, BSD, and GPL Licenses
