@@ -8,7 +8,7 @@ deploy:
  type: 
  repo: 
  branch: 
- message: Slog deploy
+ message: Blogo deploy
 
 social:
  twitter: 
