@@ -50,7 +50,7 @@ li {
   margin-left: 10px;
 }
 body{
-	color: #2f2f2f;
+	color: #555;
 	font-family: Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
 }
 a:hover{
@@ -86,5 +86,6 @@ p{
 	margin: 10px 0;
 }
 .h-font{
-	font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-weight: normal;
+	font-family: Cambria, Georgia, "Microsoft Jhenghei", "Hiragino Sans GB", "Microsoft YaHei", "Times New Roman", serif;
 }

@@ -6,17 +6,15 @@ block title
 	link(rel='stylesheet',type='text/css',href='/resource/css/home.css')
 	script(type='text/javascript',src='/resource/js/jquery-2.1.3.min.js')
 block content
-	h1.title #{config.blogName}
-
-	h3 Articles
-	ul.article_list
-		each blog in post.articles
-			li 
-				a(href='#{blog.link}') #{blog.title}
-				span.time #{blog.year}-#{blog.month}-#{blog.day}
-
-	h3.tags Tags
-	ul.tag_list
-		each result in post.tags.list
-			li 
-				a(href='#{result.link}') #{result.name}
+	div.content
+		h1.title.h-font #{config.blogName}
+		ul.article_list
+			each blog in post.articles
+				li
+					a.h-font(href='#{blog.link}') #{blog.title}
+					span.time #{blog.year}-#{blog.month}-#{blog.day}
+					div.desc !{blog.desc}
+		ul.tag_list
+			each result in post.tags.list
+				li
+					a.h-font(href='#{result.link}')!=result.name
