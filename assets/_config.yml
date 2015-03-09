@@ -5,7 +5,7 @@ theme: default
 author: 
 
 deploy:
- type: 
+ type: github
  repo: 
  branch: 
  message: Blogo deploy
@@ -14,6 +14,9 @@ social:
  twitter: 
  github: 
  weibo: 
+
+comments: true
+duoshuo_shortname: blogo
 
 blogName: 
 

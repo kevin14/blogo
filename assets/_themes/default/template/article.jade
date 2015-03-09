@@ -13,4 +13,16 @@ block content
 		div.page
 			a.prev(href='#{post.article.prevArticle.link}') 上一篇 #{post.article.prevArticle.title}
 			a.next(href='#{post.article.nextArticle.link}') 下一篇 #{post.article.nextArticle.title}
-		
+		- if (config.comments && config.duoshuo_shortname)
+			div.comments
+				div.ds-thread(data-thread-key='#{post.article.date}' data-title='#{post.article.title}' data-url='#{config.blogUrl}#{post.article.link}')
+				script(type='text/javascript').
+					var duoshuoQuery = {short_name:'#{config.duoshuo_shortname}'};
+					(function() {
+						var ds = document.createElement('script');
+						ds.type = 'text/javascript';ds.async = true;
+						ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+						ds.charset = 'UTF-8';
+						(document.getElementsByTagName('head')[0] 
+						|| document.getElementsByTagName('body')[0]).appendChild(ds);
+					})();
