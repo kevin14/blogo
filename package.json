@@ -1,6 +1,6 @@
 {
   "name": "blogo",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Smart Blog Generator",
   "main": "lib/index",
   "bin": "./bin/blogo",
