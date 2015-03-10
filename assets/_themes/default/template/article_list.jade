@@ -2,13 +2,17 @@ extends ./module/layout.jade
 block title
 	title #{config.blogName} 列表
 	meta(charset='utf-8')
+	meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=no")
 	link(rel='stylesheet',type='text/css',href='/resource/css/base.css')
 	link(rel='stylesheet',type='text/css',href='/resource/css/home.css')
 	script(type='text/javascript',src='/resource/js/jquery-2.1.3.min.js')
 block content
-	h1 #{config.blogName}
-	ul
-		each blog in post.articles
-			li 
-				a(href='#{blog.link}') #{blog.title}
+	div.content
+		h1.title.h-font #{config.blogName}
+		ul.article_list
+			each blog in post.articles
+				li
+					a.h-font(href='#{blog.link}') #{blog.title}
+					span.time #{blog.year}-#{blog.month}-#{blog.day}
+					div.desc !{blog.desc}
 				
